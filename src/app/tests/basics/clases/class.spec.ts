@@ -25,7 +25,7 @@ describe('Pruebas con clases',
             const expected = personaje.getHurt(500);
             expect(expected).toBe(0);
         });
-        it('Debe retornar el HP actual del npc', () => {
+        xit('Debe retornar el HP actual del npc', () => {
             const expected = personaje.getHP();
             expect(expected).toBe(100);
         });
