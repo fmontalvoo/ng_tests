@@ -97,5 +97,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "warnings": {
+      "versionMismatch": false
+    }
   }
 }
