@@ -1,35 +1,29 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
-xdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule.withRoutes([])
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        // NavBarComponent
       ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('Debe tener el router-outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    const debugElement = fixture.debugElement.query(By.directive(RouterOutlet));
+    expect(debugElement).toBeTruthy();
+    expect(debugElement).not.toBeNull();
   });
 
-  it(`should have as title 'ng_tests'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng_tests');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ng_tests app is running!');
-  });
 });

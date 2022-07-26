@@ -9,6 +9,8 @@ import { MedicosComponent } from './tests/intermediate/espias/medicos.component'
 import { DoctorComponent } from './tests/intermediate/doctor/doctor.component';
 import { HospitalComponent } from './tests/intermediate/hospital/hospital.component';
 import { IncrementadorComponent } from './tests/intermediate/incrementador/incrementador.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RouterMedicoComponent } from './tests/advanced/router-medico/router-medico.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { IncrementadorComponent } from './tests/intermediate/incrementador/incre
     MedicosComponent,
     DoctorComponent,
     HospitalComponent,
-    IncrementadorComponent
+    IncrementadorComponent,
+    NavBarComponent,
+    RouterMedicoComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
